@@ -1,0 +1,795 @@
+{
+	"Ticker": "AAT",
+	"Company Name": "American Assets Trust",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "ABR",
+	"Company Name": "Arbor Realty Trust, Inc.",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "ACR",
+	"Company Name": "ACRES Commercial Realty Corp",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "ACRE",
+	"Company Name": "Ares Commercial Real Estate",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "ADC",
+	"Company Name": "Agree Realty Corporation",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "AGNC",
+	"Company Name": "AGNC Investment Corp",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "AHH",
+	"Company Name": "Armada Hoffler Properties, Inc.",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "AHR",
+	"Company Name": "American Healthcare REIT, Inc.",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "AHT",
+	"Company Name": "Ashford Hospitality Trust",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "AKR",
+	"Company Name": "Acadia Realty Trust",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "ALEX",
+	"Company Name": "Alexander & Baldwin, Inc.",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "ALX",
+	"Company Name": "Alexander's, Inc.",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "AMH",
+	"Company Name": "AMH",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "AMT",
+	"Company Name": "American Tower Corporation",
+	"Sector": "Infrastructure"
+}
+{
+	"Ticker": "AOMR",
+	"Company Name": "Angel Oak Mortgage, Inc.",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "APLE",
+	"Company Name": "Apple Hospitality REIT, Inc.",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "ARE",
+	"Company Name": "Alexandria Real Estate Equities, Inc.",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "ARI",
+	"Company Name": "Apollo Commercial RE Finance, Inc.",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "ARR",
+	"Company Name": "ARMOUR Residential REIT",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "AVB",
+	"Company Name": "AvalonBay Communities, Inc.",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "BDN",
+	"Company Name": "Brandywine Realty Trust",
+	"Sector": "Office"
+}
+{
+	"Ticker": "BHR",
+	"Company Name": "Braemar Hotels & Resorts, Inc.",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "BNL",
+	"Company Name": "Broadstone Net Lease, Inc.",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "BRSP",
+	"Company Name": "BrightSpire Capital, Inc.",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "BRX",
+	"Company Name": "Brixmor Property Group Inc.",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "BXMT",
+	"Company Name": "Blackstone Mortgage Trust, Inc.",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "BXP",
+	"Company Name": "BXP Inc",
+	"Sector": "Office"
+}
+{
+	"Ticker": "CCI",
+	"Company Name": "Crown Castle Inc.",
+	"Sector": "Infrastructure"
+}
+{
+	"Ticker": "CDP",
+	"Company Name": "COPT Defense Properties",
+	"Sector": "Office"
+}
+{
+	"Ticker": "CHCT",
+	"Company Name": "Community Healthcare Trust",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "CHMI",
+	"Company Name": "Cherry Hill Mortgage Investment Corporation",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "CIM",
+	"Company Name": "Chimera Investment Corporation",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "CIO",
+	"Company Name": "City Office REIT",
+	"Sector": "Office"
+}
+{
+	"Ticker": "CLDT",
+	"Company Name": "Chatham Lodging Trust",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "CLPR",
+	"Company Name": "Clipper Realty Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "CMCT",
+	"Company Name": "Creative Media & Community Trust",
+	"Sector": "Office"
+}
+{
+	"Ticker": "COLD",
+	"Company Name": "Americold Realty Trust Inc",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "CPT",
+	"Company Name": "Camden Property Trust",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "CSR",
+	"Company Name": "Centerspace",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "CTO",
+	"Company Name": "CTO Realty Growth, Inc.",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "CTRE",
+	"Company Name": "CareTrust REIT, Inc.",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "CUBE",
+	"Company Name": "CubeSmart",
+	"Sector": "Self Storage"
+}
+{
+	"Ticker": "CUZ",
+	"Company Name": "Cousins Properties Inc",
+	"Sector": "Office"
+}
+{
+	"Ticker": "DBRG",
+	"Company Name": "DigitalBridge Group, Inc.",
+	"Sector": "Infrastructure"
+}
+{
+	"Ticker": "DEA",
+	"Company Name": "Easterly Government Properties Inc",
+	"Sector": "Office"
+}
+{
+	"Ticker": "DEI",
+	"Company Name": "Douglas Emmett Inc",
+	"Sector": "Office"
+}
+{
+	"Ticker": "DHC",
+	"Company Name": "Diversified Healthcare Trust",
+	"Sector": "Health care"
+}
+{
+	"Ticker": "DLR",
+	"Company Name": "Digital Realty Trust Inc",
+	"Sector": "Data Centers"
+}
+{
+	"Ticker": "DRH",
+	"Company Name": "DiamondRock Hospitality Company",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "DX",
+	"Company Name": "Dynex Capital Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "EARN",
+	"Company Name": "Ellington Credit Company",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "EFC",
+	"Company Name": "Ellington Financial Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "EGP",
+	"Company Name": "EastGroup Properties Inc",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "ELME",
+	"Company Name": "Elme Communities",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "ELS",
+	"Company Name": "Equity Lifestyle Properties Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "EPR",
+	"Company Name": "EPR Properties",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "EQC",
+	"Company Name": "Equity Commonwealth",
+	"Sector": "Office"
+}
+{
+	"Ticker": "EQIX",
+	"Company Name": "Equinix Inc",
+	"Sector": "Data Centers"
+}
+{
+	"Ticker": "EQR",
+	"Company Name": "Equity Residential",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "ESRT",
+	"Company Name": "Empire State Realty Trust Inc.",
+	"Sector": "Office"
+}
+{
+	"Ticker": "ESS",
+	"Company Name": "Essex Property Trust Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "EXR",
+	"Company Name": "Extra Space Storage Inc",
+	"Sector": "Self Storage"
+}
+{
+	"Ticker": "FBRT",
+	"Company Name": "Franklin BSP Realty Trust Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "FCPT",
+	"Company Name": "Four Corners Property Trust Inc",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "FPI",
+	"Company Name": "Farmland Partners Inc",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "FR",
+	"Company Name": "First Industrial Realty Trust, Inc.",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "FRT",
+	"Company Name": "Federal Realty Investment Trust",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "FSP",
+	"Company Name": "Franklin Street Properties Corp",
+	"Sector": "Office"
+}
+{
+	"Ticker": "GEO",
+	"Company Name": "The Geo Group Inc",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "GLPI",
+	"Company Name": "Gaming & Leisure Properties, Inc.",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "GMRE",
+	"Company Name": "Global Medical REIT Inc",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "GNL",
+	"Company Name": "Global Net Lease Inc",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "GOOD",
+	"Company Name": "Gladstone Commercial Corp",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "GPMT",
+	"Company Name": "Granite Point Mortgage Trust Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "GTY",
+	"Company Name": "Getty Realty Corp",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "HPP",
+	"Company Name": "Hudson Pacific Properties, Inc.",
+	"Sector": "Office"
+}
+{
+	"Ticker": "HR",
+	"Company Name": "Healthcare Realty Trust Incorporated",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "HST",
+	"Company Name": "Host Hotels & Resorts Inc",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "IIPR",
+	"Company Name": "Innovative Industrial Propertes Inc",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "ILPT",
+	"Company Name": "Industrial Logistics Properties Trust",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "INN",
+	"Company Name": "Summit Hotel Properties Inc",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "INVH",
+	"Company Name": "Invitation Homes Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "IRM",
+	"Company Name": "Iron Mountain Inc",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "IVR",
+	"Company Name": "Invesco Mortgage Capital Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "IVT",
+	"Company Name": "InvenTrust Properties Corp",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "KIM",
+	"Company Name": "Kimco Realty Corp",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "KRC",
+	"Company Name": "Kilroy Realty Corp",
+	"Sector": "Office"
+}
+{
+	"Ticker": "KREF",
+	"Company Name": "KKR Real Estate Finance Trust Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "KRG",
+	"Company Name": "Kite Realty Group Trust",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "LADR",
+	"Company Name": "Ladder Capital Corp",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "LAMR",
+	"Company Name": "Lamar Advertising Co",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "LFT",
+	"Company Name": "Lument Finance Trust Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "LTC",
+	"Company Name": "LTC Properties Inc",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "LXP",
+	"Company Name": "LXP Industrial Trust",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "MAA",
+	"Company Name": "Mid-America Apartment Communities",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "MAC",
+	"Company Name": "The Macerich Company",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "MDV",
+	"Company Name": "Modiv Industrial Inc",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "MFA",
+	"Company Name": "MFA Financial Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "MPW",
+	"Company Name": "Medical Properties Trust Inc",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "NHI",
+	"Company Name": "National Health Investors",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "NLY",
+	"Company Name": "Annaly Capital Management Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "NNN",
+	"Company Name": "NNN REIT Inc",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "NREF",
+	"Company Name": "NexPoint Real Estate Finance Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "NSA",
+	"Company Name": "National Storage Affiliates Trust",
+	"Sector": "Self Storage"
+}
+{
+	"Ticker": "NTST",
+	"Company Name": "NETSTREIT Corp",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "NXRT",
+	"Company Name": "NexPoint Residential Trust Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "NYMT",
+	"Company Name": "New York Mortgage Trust Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "O",
+	"Company Name": "Realty Income Corp",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "OHI",
+	"Company Name": "Omega Healthcare Investors",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "ONL",
+	"Company Name": "Orion Properties",
+	"Sector": "Office"
+}
+{
+	"Ticker": "OPI",
+	"Company Name": "Office Properties Income Trust",
+	"Sector": "Office"
+}
+{
+	"Ticker": "ORC",
+	"Company Name": "Orchid Island Capital Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "OUT",
+	"Company Name": "Outfront Media Inc",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "PCH",
+	"Company Name": "PotlatchDeltic Corporation",
+	"Sector": "Timberland"
+}
+{
+	"Ticker": "PEB",
+	"Company Name": "Pebblebrook Hotel Trust",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "PGRE",
+	"Company Name": "Paramount Group Inc",
+	"Sector": "Office"
+}
+{
+	"Ticker": "PINE",
+	"Company Name": "Alpine Income Property Trust Inc",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "PK",
+	"Company Name": "Park Hotels & Resorts Inc",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "PKST",
+	"Company Name": "Peakstone Realty Trust",
+	"Sector": "Office"
+}
+{
+	"Ticker": "PLD",
+	"Company Name": "Prologis Inc",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "PLYM",
+	"Company Name": "Plymouth Industrial REIT Inc",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "PMT",
+	"Company Name": "PennyMac Mortgage Investment Trust",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "PSA",
+	"Company Name": "Public Storage",
+	"Sector": "Self Storage"
+}
+{
+	"Ticker": "RC",
+	"Company Name": "Ready Capital Corporation",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "REG",
+	"Company Name": "Regency Centers Corp",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "REXR",
+	"Company Name": "Rexford Industrial Realty Inc",
+	"Sector": "Industrial"
+}
+{
+	"Ticker": "RHP",
+	"Company Name": "Ryman Hospitality Properties",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "RITM",
+	"Company Name": "Rithm Capital Corp",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "RLJ",
+	"Company Name": "RLJ Lodging Trust",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "RWT",
+	"Company Name": "Redwood Trust Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "RYN",
+	"Company Name": "Rayonier Inc",
+	"Sector": "Timberland"
+}
+{
+	"Ticker": "SACH",
+	"Company Name": "Sachem Capital Corp",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "SBAC",
+	"Company Name": "SBA Communications Corporation",
+	"Sector": "Infrastructure"
+}
+{
+	"Ticker": "SBRA",
+	"Company Name": "Sabra Health Care REIT Inc",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "SEVN",
+	"Company Name": "Seven Hills Realty Trust",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "SHO",
+	"Company Name": "Sunstone Hotel Investors Inc",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "SKT",
+	"Company Name": "Tanger Inc",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "SLG",
+	"Company Name": "SL Green Realty Corp",
+	"Sector": "Office"
+}
+{
+	"Ticker": "SOHO",
+	"Company Name": "Sotherly Hotels Inc",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "SPG",
+	"Company Name": "Simon Property Group Inc",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "STWD",
+	"Company Name": "Starwood Property Trust Inc",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "SUI",
+	"Company Name": "Sun Communities Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "SVC",
+	"Company Name": "Service Properties Trust",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "TRTX",
+	"Company Name": "TPG Real Estate Finance Trust, Inc.",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "TWO",
+	"Company Name": "Two Harbors Investment Corp",
+	"Sector": "Mortgage"
+}
+{
+	"Ticker": "UDR",
+	"Company Name": "UDR Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "UE",
+	"Company Name": "Urban Edge Properties",
+	"Sector": "Retail"
+}
+{
+	"Ticker": "UNIT",
+	"Company Name": "Uniti Group Inc",
+	"Sector": "Infrastructure"
+}
+{
+	"Ticker": "VICI",
+	"Company Name": "Vici Properties Inc",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "VNO",
+	"Company Name": "Vornado Realty Trust",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "VRE",
+	"Company Name": "Veris Residential Inc",
+	"Sector": "Residential"
+}
+{
+	"Ticker": "VTR",
+	"Company Name": "Ventas Inc",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "WPC",
+	"Company Name": "W. P. Carey Inc.",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "WSR",
+	"Company Name": "Whitestone REIT",
+	"Sector": "Diversified"
+}
+{
+	"Ticker": "WY",
+	"Company Name": "Weyerhaeuser Company",
+	"Sector": "Timberland"
+}
+{
+	"Ticker": "XHR",
+	"Company Name": "Xenia Hotels & Resorts Inc",
+	"Sector": "Lodging/Resorts"
+}
+{
+	"Ticker": "LAND",
+	"Company Name": "Gladstone Land Corporation",
+	"Sector": "Specialty"
+}
+{
+	"Ticker": "DOC",
+	"Company Name": "Healthpeak Properties",
+	"Sector": "Health Care"
+}
+{
+	"Ticker": "WELL",
+	"Company Name": "Welltower",
+	"Sector": "Health Care"
+}

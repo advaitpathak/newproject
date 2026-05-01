@@ -1,0 +1,7 @@
+custom:
+  IgnoreFileExtensions:
+    development:
+      - dat
+    production:
+      - dat
+IGNORE_FILE_EXTENSIONS: ${self:custom.IgnoreFileExtensions.${opt:stage}}

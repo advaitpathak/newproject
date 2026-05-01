@@ -1,0 +1,10 @@
+{
+    "sns": "platform-alert-collector",
+    "region": "us-east-1",
+    "account_no": "040890314520",
+    "environment": "development",
+    "bucket":  "trepp-developmentservices-lake",
+    "landing_db": "landing_dev",
+    "curation_db": "curation_dev",
+    "presentation_db": "presentation_dev"
+  }

@@ -1,0 +1,160 @@
+ticker,company_name,sector
+AAT,American Assets Trust,Diversified
+ABR,"Arbor Realty Trust, Inc.",Mortgage
+ACR,ACRES Commercial Realty Corp,Mortgage
+ACRE,Ares Commercial Real Estate,Mortgage
+ADC,Agree Realty Corporation,Retail
+AGNC,AGNC Investment Corp,Mortgage
+AHH,"Armada Hoffler Properties, Inc.",Diversified
+AHR,"American Healthcare REIT, Inc.",Health Care
+AHT,Ashford Hospitality Trust,Lodging/Resorts
+AKR,Acadia Realty Trust,Retail
+ALEX,"Alexander & Baldwin, Inc.",Diversified
+ALX,"Alexander's, Inc.",Diversified
+AMH,AMH,Residential
+AMT,American Tower Corporation,Infrastructure
+AOMR,"Angel Oak Mortgage, Inc.",Mortgage
+APLE,"Apple Hospitality REIT, Inc.",Lodging/Resorts
+ARE,"Alexandria Real Estate Equities, Inc.",Health Care
+ARI,"Apollo Commercial RE Finance, Inc.",Mortgage
+ARR,ARMOUR Residential REIT,Mortgage
+AVB,"AvalonBay Communities, Inc.",Residential
+BDN,Brandywine Realty Trust,Office
+BHR,"Braemar Hotels & Resorts, Inc.",Lodging/Resorts
+BNL,"Broadstone Net Lease, Inc.",Diversified
+BRSP,"BrightSpire Capital, Inc.",Mortgage
+BRX,Brixmor Property Group Inc.,Retail
+BXMT,"Blackstone Mortgage Trust, Inc.",Mortgage
+BXP,BXP Inc,Office
+CCI,Crown Castle Inc.,Infrastructure
+CDP,COPT Defense Properties,Office
+CHCT,Community Healthcare Trust,Health Care
+CHMI,Cherry Hill Mortgage Investment Corporation,Mortgage
+CIM,Chimera Investment Corporation,Mortgage
+CIO,City Office REIT,Office
+CLDT,Chatham Lodging Trust,Lodging/Resorts
+CLPR,Clipper Realty Inc,Residential
+CMCT,Creative Media & Community Trust,Office
+COLD,Americold Realty Trust Inc,Industrial
+CPT,Camden Property Trust,Residential
+CSR,Centerspace,Residential
+CTO,"CTO Realty Growth, Inc.",Retail
+CTRE,"CareTrust REIT, Inc.",Health Care
+CUBE,CubeSmart,Self Storage
+CUZ,Cousins Properties Inc,Office
+DBRG,"DigitalBridge Group, Inc.",Infrastructure
+DEA,Easterly Government Properties Inc,Office
+DEI,Douglas Emmett Inc,Office
+DHC,Diversified Healthcare Trust,Health care
+DLR,Digital Realty Trust Inc,Data Centers
+DRH,DiamondRock Hospitality Company,Lodging/Resorts
+DX,Dynex Capital Inc,Mortgage
+EARN,Ellington Credit Company,Mortgage
+EFC,Ellington Financial Inc,Residential
+EGP,EastGroup Properties Inc,Industrial
+ELME,Elme Communities,Residential
+ELS,Equity Lifestyle Properties Inc,Residential
+EPR,EPR Properties,Specialty
+EQC,Equity Commonwealth,Office
+EQIX,Equinix Inc,Data Centers
+EQR,Equity Residential,Residential
+ESRT,Empire State Realty Trust Inc.,Office
+ESS,Essex Property Trust Inc,Residential
+EXR,Extra Space Storage Inc,Self Storage
+FBRT,Franklin BSP Realty Trust Inc,Mortgage
+FCPT,Four Corners Property Trust Inc,Retail
+FPI,Farmland Partners Inc,Specialty
+FR,"First Industrial Realty Trust, Inc.",Industrial
+FRT,Federal Realty Investment Trust,Retail
+FSP,Franklin Street Properties Corp,Office
+GEO,The Geo Group Inc,Specialty
+GLPI,"Gaming & Leisure Properties, Inc.",Specialty
+GMRE,Global Medical REIT Inc,Health Care
+GNL,Global Net Lease Inc,Diversified
+GOOD,Gladstone Commercial Corp,Diversified
+GPMT,Granite Point Mortgage Trust Inc,Mortgage
+GTY,Getty Realty Corp,Retail
+HPP,"Hudson Pacific Properties, Inc.",Office
+HR,Healthcare Realty Trust Incorporated,Health Care
+HST,Host Hotels & Resorts Inc,Lodging/Resorts
+IIPR,Innovative Industrial Propertes Inc,Specialty
+ILPT,Industrial Logistics Properties Trust,Industrial
+INN,Summit Hotel Properties Inc,Lodging/Resorts
+INVH,Invitation Homes Inc,Residential
+IRM,Iron Mountain Inc,Specialty
+IVR,Invesco Mortgage Capital Inc,Mortgage
+IVT,InvenTrust Properties Corp,Retail
+KIM,Kimco Realty Corp,Retail
+KRC,Kilroy Realty Corp,Office
+KREF,KKR Real Estate Finance Trust Inc,Mortgage
+KRG,Kite Realty Group Trust,Retail
+LADR,Ladder Capital Corp,Mortgage
+LAMR,Lamar Advertising Co,Specialty
+LFT,Lument Finance Trust Inc,Residential
+LTC,LTC Properties Inc,Health Care
+LXP,LXP Industrial Trust,Diversified
+MAA,Mid-America Apartment Communities,Residential
+MAC,The Macerich Company,Retail
+MDV,Modiv Industrial Inc,Industrial
+MFA,MFA Financial Inc,Mortgage
+MPW,Medical Properties Trust Inc,Health Care
+NHI,National Health Investors,Health Care
+NLY,Annaly Capital Management Inc,Mortgage
+NNN,NNN REIT Inc,Retail
+NREF,NexPoint Real Estate Finance Inc,Mortgage
+NSA,National Storage Affiliates Trust,Self Storage
+NTST,NETSTREIT Corp,Retail
+NXRT,NexPoint Residential Trust Inc,Residential
+NYMT,New York Mortgage Trust Inc,Mortgage
+O,Realty Income Corp,Retail
+OHI,Omega Healthcare Investors,Health Care
+ONL,Orion Properties,Office
+OPI,Office Properties Income Trust,Office
+ORC,Orchid Island Capital Inc,Mortgage
+OUT,Outfront Media Inc,Specialty
+PCH,PotlatchDeltic Corporation,Timberland
+PEB,Pebblebrook Hotel Trust,Lodging/Resorts
+PGRE,Paramount Group Inc,Office
+PINE,Alpine Income Property Trust Inc,Retail
+PK,Park Hotels & Resorts Inc,Lodging/Resorts
+PKST,Peakstone Realty Trust,Office
+PLD,Prologis Inc,Industrial
+PLYM,Plymouth Industrial REIT Inc,Industrial
+PMT,PennyMac Mortgage Investment Trust,Mortgage
+PSA,Public Storage,Self Storage
+RC,Ready Capital Corporation,Mortgage
+REG,Regency Centers Corp,Retail
+REXR,Rexford Industrial Realty Inc,Industrial
+RHP,Ryman Hospitality Properties,Lodging/Resorts
+RITM,Rithm Capital Corp,Mortgage
+RLJ,RLJ Lodging Trust,Lodging/Resorts
+RWT,Redwood Trust Inc,Mortgage
+RYN,Rayonier Inc,Timberland
+SACH,Sachem Capital Corp,Mortgage
+SBAC,SBA Communications Corporation,Infrastructure
+SBRA,Sabra Health Care REIT Inc,Health Care
+SEVN,Seven Hills Realty Trust,Mortgage
+SHO,Sunstone Hotel Investors Inc,Lodging/Resorts
+SKT,Tanger Inc,Retail
+SLG,SL Green Realty Corp,Office
+SOHO,Sotherly Hotels Inc,Lodging/Resorts
+SPG,Simon Property Group Inc,Retail
+STWD,Starwood Property Trust Inc,Mortgage
+SUI,Sun Communities Inc,Residential
+SVC,Service Properties Trust,Lodging/Resorts
+TRTX,"TPG Real Estate Finance Trust, Inc.",Mortgage
+TWO,Two Harbors Investment Corp,Mortgage
+UDR,UDR Inc,Residential
+UE,Urban Edge Properties,Retail
+UNIT,Uniti Group Inc,Infrastructure
+VICI,Vici Properties Inc,Specialty
+VNO,Vornado Realty Trust,Diversified
+VRE,Veris Residential Inc,Residential
+VTR,Ventas Inc,Health Care
+WPC,W. P. Carey Inc.,Diversified
+WSR,Whitestone REIT,Diversified
+WY,Weyerhaeuser Company,Timberland
+XHR,Xenia Hotels & Resorts Inc,Lodging/Resorts
+LAND,Gladstone Land Corporation,Specialty
+DOC,Healthpeak Properties,Health Care
+WELL,Welltower,Health Care

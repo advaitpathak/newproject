@@ -1,0 +1,1720 @@
+# Expected schema (dict remains the source of truth)
+expected_comments = {    "dosname": "Trepp internal deal name",    "poolnum": "Unique servicer loan number assigned to each collateral item. If servicer loan ID is reported as duplicate, Trepp will create unique value",    "collateralid": "Unique identification number assigned to each collateral item in the prospectus; where available and consistent with Annex A, CREFC value is used; else Trepp supplied value is used",    "distdate": "Date on which funds are distributed to certificateholders for a particular period as defined in the servicing agreement. (YYYYMMDD)",    "disposedamount": "Beginning balance of loan in the month it paid off or was liquidated",    "dispositiondt": "Liquidation/prepayment date from CREFC Loan Periodic file if available, else uses the distribution date when loan was paid off/liquidated",    "lastpaidthrudt": "Paid through date of loan reported in CREFC Loan Periodic in month prior to loan paying off/liquidating",    "monthstorecover": "Number of months between disposition date and last paid through date. (Only populated for loans where disposition type is a loss)",    "disposedprepaypenalty": "Penalty taken from loan periodic where available. Periodically supplemented through Trepp research or remittance report data",    "calcpenaltypct": "Prepayment penalty divided by paid off amount multiplied by 100",    "lossamount": "Where loss amount in CREFC Loan Periodic file is different from the value on the remittance report, the number is taken from the most recent remittance report",    "calclosspct": "Loss divided by initial securitized balance multiplied by 100",    "dispositiontype": "See Disposition Type Legend",    "dispositionsubtype": "See Disposition Subtype Legend",    "dispositioncomments": "Comments filled in by Trepp analysts",    "prepaymentexposureamt": "Estimated prepayment penalty amount if loan hypothetically prepays on next distribution date. If loan is in lockout, then 0 is displayed",    "prepaymentexposurepct": "Estimated prepayment penalty percent if loan hypothetically prepays on next distribution date. If loan is in lockout, then 0 is displayed",    "masterloanidtrepp": "Trepp Master Loan ID (Key Field)",    "notenum": "For loans where there is only one note, the value will be 1 (default value). If there is a modeled multiple note capital structure, all notes that are part of the trust will appear in separate lines each with a separate value",    "acrossdealsloanidtrepp": "For loans that are pari passu (split across multiple securitizations) an integer will appear that will permit linking of loans across deals",    "notepctpledged": "Percentage of note pledged to trust",    "loanindeals": "For loans that are pari passu (split across multiple securitizations) text will appear identifying the other securitizations where the note resides",    "curwholeloanbal": "For standard loans, this we be the same value as the Current Ending Scheduled Balance in the Loan File. For AB notes where less than 100 percent of the note is pledged, the Current Whole Loan Ending Balance will be the Current Ending Scheduled Balance divided by the NotePctPledged",    "closedatepermext": "The effective date of the extension of the Maturity Date allowed under the loan documents",    "origloanbaltrustee": "The Total Loan Amount at Origination of all split loan/note pieces",    "liqsalesprice": "Proceeds upon liquidation such as sales proceeds, insurance proceeds, other proceeds, and reserve/suspense balances but before broker fees and selling costs. Should be reflected on the Servicer Realized Loss Template as applicable",    "amtduesvcandtrustee": "Should be the sum of items 1)a thru 1)l on the Servicer Realized Loss Template",    "amtheldfuturepmt": "Should be the sum of items 2)a thru 2)b on the Servicer Realized Loss Template",    "accruedint": "Should be the sum of 3)a thru 3)e on the Servicer Realized Loss Template",    "addltrustfundexpense": "Should be the sum of 4)a thru 4)g on the Servicer Realized Loss Template",    "currperadjtotrust": "Should equal additional proceeds less additional expenses in the current period attributed to an adjustment to the amount of Liquidation Proceeds allocable to principal. A positive number represents additional proceeds and a negative number represents a reduction of proceeds available to the trust. The Servicer's determination that additional proceeds have been received that are allocable to principal is not a determination of whether there should be an adjustment at the bond level, which shall be determined by the governing servicing documents",    "currperadjtotrustdate": "Distribution Date in which additionally proceeds or expenses have been received after the original Realized Loss",    "cumminoradjtotrust": "Cumulative additional proceeds and cumulative additional expenses after the original Realized Loss to Trust calculation. A positive number represents additional proceeds were available. This is the cumulative total of amounts reported as Current Period Adjustment to Loan – Principal plus Current Period Adjustment to Loan – Other since inception",    "currmoreimbadvtosvc": "Amount of shortfall to the trust related to the current month reimbursement of funds to the servicer for non-recoverable advances. Included in this field should be Property Protection Advances that are being paid and reimbursed in the current month from general collections on non recoverable loans. This results in a reduction to the cash flow to the trust. Amounts in L122 should be added to cumulative field L128",    "reimbadvtosvcleft": "Amount still to be recovered from trust for reimbursements to servicer of non-recoverable and/or modification delayed amounts",    "othintshortfallsorrefunds": "Anything else that hits as a shortfall (reported as a negative number) or refund (reported as a positive number) that is not reported elsewhere in the Loan Periodic Update File",    "numnotes": "Total number of notes in the whole loan capital structure that are modeled (includes both pledged and non-pledged notes). For loans which we do not model the whole loan capital structure, value will be null",    "securoterm": "Original term of loan as specified in Annex A at securitization. Not available for all loans, only available for deals modeled after 9/2006",    "ardflag": "Anticipated Repayment Date Flag as referenced in Annex A (Y/N). Trepp has researched additional ARD loans and if confirmed and not specified as such in the annex A, value is \"C\" for calculated. If annex A defines as Hybrid, then will be \"H\"",    "legalmaturitydate": "Earlier maturity date available as referenced in Annex A",    "guarantorandsponsor": "Guarantor or Sponsor as referenced in Annex A",    "country": "Country as it appears in Annex A. Populated only for European, Canadian and Asian deals",    "mfdirected": "Populated for conduit deals which multifamily loans support class A1A",    "dlqhist": "Delinquency status of loan for the past 12 months",    "dlqhistall": "Number of times loan has been delinquent",    "curmonlock": "Lockout periods as of tape date",    "curmonymc": "YMC periods as of tape date",    "curmonpp": "Prepayment Premium as of tape date",    "securmonlock": "Lockout periods as of securitization",    "securmonymc": "YMC periods as of securitization",    "securmonpp": "Prepayment Premium as of securitization",    "prepaycategory": "Prepayment restriction as of tape date",    "firstcallperiod": "First period defeasance option can occur",    "perpastmaturity": "Number of periods loan is past maturity date",    "extoption1": "Number of periods to extend option 1",    "extoption2": "Number of periods to extend option 2",    "extoption3": "Number of periods to extend option 3",    "extoption4": "Number of periods to extend option 4",    "extoption5": "Number of periods to extend option 5",    "mrfytdICRNOI": "Most recent fiscal year to date ICR (NOI)",    "mrfytdICRNCF": "Most recent fiscal year to date ICR (NCF)",    "priorfyICRNOI": "Preceding fiscal year to date ICR (NOI)",    "priorfyICRNCF": "Preceding fiscal year to date ICR (NCF)",    "secpriorfyICRNOI": "Second preceding fiscal year to date ICR (NOI)",    "secpriorfyICRNCF": "Second preceding fiscal year to date ICR (NCF)",    "ICRNOI": "Derived ICR (NOI): if most recent ICR (NOI) else prior fiscal year ICR (NOI) else second prior fiscal year ICR (NOI) else securitization ICR (NOI); only full fiscal years used for most recent",    "ICRNOIAsOf": "Source of derived ICR (NOI) (see Derived Credit Data Codes)",    "ICRNCF": "Derived ICR (NCF): if most recent ICR (NCF) else prior fiscal year ICR (NCF) else second prior fiscal year ICR (NCF) else securitization ICR (NCF); only full fiscal years used for most recent",    "ICRNCFAsOf": "Source of derived ICR (NCF) (see Derived Credit Data Codes)",    "curICR": "Derived current ICR: if most recent current ICR else prior fiscal year current ICR else second prior fiscal year current ICR else securitization current ICR; only full fiscal years used for most recent",    "ICRAsOf": "Source of derived current ICR (see Derived Credit Data Codes)",    "securICRNOI": "Securitization ICR (NOI) from Annex A or Offering Circular",    "securICRNCF": "Securitization ICR (NCF) from Annex A or Offering Circular",    "securICRNOINCF": "Securitization ICR (NOI/NCF) from Annex A or Offering Circular",    "covenantICRText": "Minimum ICR value the borrower is required to maintain",    "covenantDSCRText": "Minimum DSCR value the borrower is required to maintain",    "covenantLTVText": "Maximum LTV value the borrower is required to maintain",    "covenantOtherText": "Other value/schedule the borrower is required to maintain",    "CDOAssetType": "Type of asset in CDO collateral portfolio",    "currLockBoxStatus": "See Current Lockbox Status Legend. Populate for all loans in the pool on the Loan Periodic Update File",    "cumDefInt": "Deferred interest occurs when interest accrued for the period exceeds the amount of interest required to be paid for the period.  The requirement to pay the excess accrued interest is deferred to a future period.  This field should be populated with the cumulative deferred interest (non ARD) outstanding for the current and prior reporting periods net of any Deferred Interest Collected in L126",    "defIntColl": "Amount of deferred interest that is collected for (non ARD) the current reporting period",    "yrRenov": "Year property was renovated from Annex A (If multiple years provided in Annex A, Trepp uses latest year)",    "secIOPeriods": "Number of Interest Only periods as of securitization",    "secPmt": "Total monthly scheduled principal and interest payment as of securitization",    "secDebtServ": "Total annual scheduled principal and interest payment as of securitzation",    "loanpurpose": "Reason why the loan was originated/What the borrower used the loan for",    "extensionType": "Defines the type of balloon/maturity (ARD, Hard Balloon, fully amortizing, etc)",    "totRemExtPeriods": "Number of remaining periods in available un-exercised extension options",    "l_specialServicer": "Loan Special Servicer addresses loans that are split across various deals. In such cases, Trepp assumes that the loan special servicer is the same as the special servicer of the deal with the earliest closing date",    "loanModDtTrepp": "Actual date when modification of loan terms were reflected in the Trepp model",    "loanModDerivedStatus": "Indication of whether the loan has been modified or whether it is modified but not modeled due to insufficient information from CREFC data (loan periodic, delinquent loan status report, remittance report, historical loan modification report)",    "loanModDescTrepp": "Trepp internally generated long description concerning modification",    "modDerivedLoanModDesc": "Trepp internally generated long description concerning modification",    "loanModUnavailTrepp": "Flag indicating full modification information was not made available in CREFC data so model may not be fully changed (Y = No modification data available; P = Partial modification date available)",    "loanModSubordLevelTrepp": "Note subordinate level with structure of Hope Note",    "modHopeNoteExists": "Flag used to determine whether the loan is Hope Note related",    "loanModPrinForgiveTrepp": "Amount of outstanding debt borrower no longer needs to return, based on modification agreement between special servicer and borrower",    "modRateTrepp": "Modified rate based on modification report",    "modIOPeriodChange": "Change in interest only periods due to modification",    "modOtermChange": "Change in original term due to modification",    "splitreason": "Trepp generated reason for loan split",    "splitdate": "Date of loan being split (MM/YYYY). If loan is split at securitization, no date provided",    "splitcross": "Servicer Loan ID of original loan that was split",    "derivedLoanStatus": "Loan performance levels based on watchlist, specially serviced, performing and delinquency.  See Derived Loan Status Legend",    "newlyDq": "Flag indicating loan intially becaming delinquent as of tape date",    "newlySpecServ": "Flag indicating loan was initially sent to special servicing as of tape date",    "newlyWatchlist": "Flag indicating loan was initially put on watchlist as of tape date",    "derivedsecNOIDebtYield": "Trepp derived Debt Yield NOI as of securitization (1)",    "derivedcurNOIDebtYield": "Trepp derived Debt Yield NOI as of tape date (1)",    "derivedsecNCFDebtYield": "Trepp derived Debt Yield NCF as of securitization (1)",    "derivedcurNCFDebtYield": "Trepp derived Debt Yield NCF as of tape date (1)",    "curMonAged": "Loan age as of tape date",    "curAmortType": "Trepp derived amortization classification of the loan (Balloon, Fully Amort, IO, IO then Amort, IO then Balloon)",    "regionText": "Region as it appears in Annex A",    "swapFixedRate": "The rate the loan's fixed payment is based on",    "swapMatDt": "The date the loan's fixed to floating swap terminates (YYYYMMDD)",    "swapNotionalBal": "The notional balance the loan's fixed to floating swap is based on",    "seller": "Mortgage Loan Seller as it appears in Annex A",    "affiliatedSponsors": "Affiliated Sponsor as it appears in Annex A",    "loanType": "Loan Type or Rate Type if available from Annex A.  Applicable for CMBS 2.0 deals and CMBS 3.0 deals",    "fhaProgramFlag": "FHA Insurance program as it appears in prospectus; will be populated for only FN/GN pools",    "hotelFlag": "Hotel Flag (Y/N) if specified in Annex A; value is generated if column is not provided based on the CREFC Property Type",    "secPariPassuDebtANote": "Pari Passu Debt - A note if available from Annex A.  Applicable for CMBS 2.0 deals and CMBS 3.0 deals",    "secTotalTrustBalance": "Total Trust Balance if available from Annex A. Applicable for CMBS 2.0 deals and CMBS 3.0 deals",    "origHoldBack": "Holdback amount as it appears in Annex A",    "lastIOPmtDt": "Last IO payment date of loan if specified in Annex A; value is not generated if unavailable in Annex A (YYYYMMDD)",    "firstPmtDtPandI": "First P&I payment date of loan if specified in Annex A; value is not generated if unavailable in Annex A (YYYYMMDD)",    "fullyExtendedMatDt": "Maturity date after all extension options have been exercised if specified in Annex A; value is not generated if unavailable in Annex A (YYYYMMDD)",    "secAmortType": "Amortization classification of the loan (Balloon, Amortizing, IO, IO then Amort, IO then Balloon, etc) as of securitization",    "secMasterServicer": "Master Servicer as of securitization if specified in Annex A; value is not generated if unavailable in Annex A",    "secSpecialServicer": "Special Servicer as of securitization if specified in Annex A; value is not generated if unavailable in Annex A",    "secDebtServiceIO": "Total annual scheduled interest payment as of securitzation",    "secDebtServiceIOAllIn": "Annual total scheduled interest payment based on securitized debt and pari passu debt and B note and Mezzanine debt as of securitization",    "secDebtServicePandIAllIn": "Annual total scheduled principal and interest payment based on securitized debt and pari passu debt and B note and Mezzanine debt as of securitization",    "secDebtYieldNOIAllIn": "Debt Yield NOI based on securitized debt and pari passu debt and B note and Mezzanine debt as of securitization from Annex A",    "secDebtYieldNCFAllIn": "Debt Yield NCF based on securitized debt and pari passu debt and B note and Mezzanine debt as of securitization from Annex A",    "secDebtYieldNOInew": "Debt Yield based on NOI as of securitization from Annex A",    "secDebtYieldNCFnew": "Debt Yield based on NCF as of securitization from Annex A",    "secNOIDSCRAmortPI": "DSCR based on NOI and Cutoff Date Annual Debt Service as of securitization from Annex A",    "secNetCFDSCRAmortPI": "DSCR based on NCF and Cutoff Date Annual Debt Service as of securitization from Annex A",    "secNOIDSCRIO": "DSCR based on NOI and Cutoff Date Annual IO Debt Service as of securitization from Annex A",    "secNetCFDSCRIO": "DSCR based on NCF and Cutoff Date Annual IO Debt Service as of securitization from Annex A",    "secDSCRAmortAllIn": "DSCR based on NOI, includes securitized debt and pari passu debt and B note and Mezzanine debt as of securitization from Annex A",    "secNetCFDSCRAmortAllIn": "DSCR based on NCF, includes securitized debt and pari passu debt and B note and Mezzanine debt as of securitization from Annex A",    "secLTVAllIn": "LTV based on securitized debt and pari passu debt and B note and Mezzanine debt as of securitization from Annex A",    "secMatDtLTVAllIn": "Balloon LTV based on securitized debt and pari passu debt and B note and Mezzanine debt as specified in Annex A;  value is not generated if unavailable in Annex A",    "sec3rdMREndDt": "Third most recent period financial as of date as of securitization (YYYYMMDD)",    "sec3rdMREGI": "Effective gross income (EGI) for the third most recent period as of securitization from Annex A",    "sec3rdMROperExp": "Operating expenses for the third most recent period as of securitization from Annex A",    "sec3rdMRNOI": "Net operating income (NOI) for the third most recent period as of securitization from Annex A",    "sec3rdMRCapExp": "Capital expenses for the third most recent period as of securitization from Annex A",    "sec3rdMRNCF": "Net cash flow (NCF) for the third most recent period as of securitization from Annex A",    "sec3rdMROccpancyPct": "Physical occupancy for the third most recent period as of securitization from Annex A",    "sec3rdMRDebtYieldNOI": "Debt yield based on NOI for the third most recent period as of securitization from Annex A",    "sec2ndMREndDt": "Second most recent period as of date as of securitization (YYYYMMDD)",    "sec2ndMREGI": "Effective gross income (EGI) for the second most recent period as of securitization from Annex A",    "sec2ndMROperExp": "Operating expenses for the second most recent period as of securitization from Annex A",    "sec2ndMRNOI": "Net operating income (NOI) for the second most recent period as of securitization from Annex A",    "sec2ndMRCapExp": "Capital expenses for the second most recent period as of securitization from Annex A",    "sec2ndMRNCF": "Net cash flow (NCF) for the second most recent period as of securitization from Annex A",    "sec2ndMROccpancyPct": "Physical occupancy for the second most recent period as of securitization from Annex A",    "sec2ndMRDebtYieldNOI": "Debt yield based on NOI for the second most recent period as of securitization from Annex A",    "secMRBegDt": "Most recent period start date as of securitization (YYYYMMDD)",    "secMREndDt": "Most recent period end date as of securitization (YYYYMMDD)",    "secMRDtType": "Description of the period for the financials reported for the most recent period as of securitization from Annex A",    "secMREGI": "Effective gross income (EGI) for the most recent period as of securitization from Annex A",    "secMROperExp": "Operating expenses for the most recent period as of securitization from Annex A",    "secMRNOI": "Net operating income (NOI) for the most recent period as of securitization from Annex A",    "secMRCapExp": "Capital expenses for the most recent period as of securitization from Annex A",    "secMRNCF": "Net cash flow (NCF) for the most recent period as of securitization from Annex A",    "secMROccpancyPct": "Physical occupancy for the most recent period as of securitization from Annex A",    "secMRDebtYieldNOI": "Debt yield based on NOI for the most recent period as of securitization from Annex A",    "secEGI": "Effective gross income (EGI) as of securitization from Annex A",    "secExpensesOper": "Operating Expenses as of securitization from Annex A",    "secReplaceRes": "Replacement Reserve as of securitization from Annex A",    "secExpensesCap": "Capital Expenses as of securitization from Annex A",    "sec3rdMRADR": "Average daily rate (ADR) for the third most recent period as of securitization from Annex A",    "sec3rdMRRevPar": "Revenue per available room for the third most recent period as of securitization from Annex A",    "sec2ndMRADR": "Average daily rate (ADR) for the second most recent period as of securitization from Annex A",    "sec2ndMRRevPar": "Revenue per available room for the second most recent period as of securitization from Annex A",    "secMRADR": "Average daily rate (ADR) for the most recent period as of securitization from Annex A",    "secMRRevPar": "Revenue per available room for the most recent period as of securitization from Annex A",    "secADR": "Average daily rate (ADR) as of securitization from Annex A",    "secRevPar": "Revenue per available room as of securitization from Annex A",    "secTaxEscUpfront": "Upfront Tax Escrow as of securitization from Annex A",    "secTaxEscMonthly": "Monthly Tax Escrow as of securitization from Annex A",    "secTaxEscCashorLOC": "Tax Escrow - Cash or LOC as of securitization from Annex A",    "secTaxEscLOCCntpty": "Tax Escrow LOC Counterparty as of securitization from Annex A",    "secInsEscUpfront": "Upfront Insurance Escrow as of securitization from Annex A",    "secInsEscMonthly": "Monthly Insurance Escrow as of securitization from Annex A",    "secInsEscCashorLOC": "Insurance Escrow - Cash or LOC as of securitization from Annex A",    "secInsEscLOCCntpty": "Insurance Escrow LOC Counterparty as of securitization from Annex A",    "secReplaceResUpfront": "Upfront Replacement Reserve as of securitization from Annex A",    "secReplaceResMonthly": "Monthly Replacement Reserve as of securitization from Annex A",    "secReplaceResCap": "Replacement Reserve Cap as of securitization from Annex A",    "secReplaceResCashorLOC": "Replacement Reserve - Cash or LOC as of securitization from Annex A",    "secRepResEscLOCCntpty": "Replacement Reserve LOC Counterparty as of securitization from Annex A",    "secTILCResUpfront": "Upfront TI/LC Reserve as of securitization from Annex A",    "secTILCResMonthly": "Monthly TI/LC Reserve as of securitization from Annex A",    "secTILCResCap": "TI/LC Reserve Cap as of securitization from Annex A",    "secTILCResCashorLOC": "TI/LC Reserve - Cash or LOC as of securitization from Annex A",    "secTILCResLOCCntpty": "TI/LC Reserve LOC Counterparty as of securitization from Annex A",    "secDebtSvcResUpfront": "Upfront Debt Service Reserve as of securitization from Annex A",    "secDebtSvcResMonthly": "Monthly Debt Service Reserve as of securitization from Annex A",    "secDebtSvcResCap": "Debt Service Reserve Cap as of securitization from Annex A",    "secDebtSvcResCashorLOC": "Debt Service Reserve - Cash or LOC as of securitization from Annex A",    "secDebtSvcEscLOCCntpty": "Debt Service Reserve LOC Counterparty as of securitization from Annex A",    "secOtherRes1Type": "Additional reserve description as of securitization from Annex A",    "secOtherRes1Upfront": "Additional upfront reserve as of securitization from Annex A",    "secOtherRes1Monthly": "Additional monthly reserve as of securitization from Annex A",    "secOtherRes1Cap": "Additional reserve cap as of securitization from Annex A",    "secOtherRes1CashorLOC": "Additional reserve cash or LOC as of securitization from Annex A",    "secOtherRes1LOCCntpty": "Additional reserve LOC counterparty as of securitization from Annex A",    "secOtherRes2Type": "Additional reserve description as of securitization from Annex A",    "secOtherRes2Upfront": "Additional upfront reserve as of securitization from Annex A",    "secOtherRes2Monthly": "Additional monthly reserve as of securitization from Annex A",    "secOtherRes2Cap": "Additional reserve cap as of securitization from Annex A",    "secOtherRes2CashorLOC": "Additional reserve cash or LOC as of securitization from Annex A",    "secOtherRes2LOCCntpty": "Additional reserve LOC counterparty as of securitization from Annex A",    "secOtherRes3Type": "Additional reserve description at securitization from Annex A",    "secOtherRes3Upfront": "Additional upfront reserve as of securitization from Annex A",    "secOtherRes3Monthly": "Additional monthly reserve as of securitization from Annex A",    "secOtherRes3Cap": "Additional reserve cap as of securitization from Annex A",    "secOtherRes3CashorLOC": "Additional reserve cash or LOC as of securitization from Annex A",    "secOtherRes3LOCCntpty": "Additional reserve LOC counterparty as of securitization from Annex A",    "secOtherRes4Type": "Additional reserve description at securitization from Annex A",    "secOtherRes4Upfront": "Additional upfront reserve as of securitization from Annex A",    "secOtherRes4Monthly": "Additional monthly reserve as of securitization from Annex A",    "secOtherRes4Cap": "Additional reserve cap as of securitization from Annex A",    "secOtherRes4CashorLOC": "Additional reserve cash or LOC as of securitization from Annex A",    "secOtherRes4LOCCntpty": "Additional reserve LOC counterparty as of securitization from Annex A",    "secOtherRes5Type": "Additional reserve description at securitization from Annex A",    "secOtherRes5Upfront": "Additional upfront reserve as of securitization from Annex A",    "secOtherRes5Monthly": "Additional monthly reserve as of securitization from Annex A",    "secOtherRes5Cap": "Additional reserve cap as of securitization from Annex A",    "secOtherRes5CashorLOC": "Additional reserve cash or LOC as of securitization from Annex A",    "secOtherRes5LOCCntpty": "Additional reserve LOC counterparty as of securitization from Annex A",    "secOtherRes6Type": "Additional reserve description at securitization from Annex A",    "secOtherRes6Upfront": "Additional upfront reserve as of securitization from Annex A",    "secOtherRes6Monthly": "Additional monthly reserve as of securitization from Annex A",    "secOtherRes6Cap": "Additional reserve cap as of securitization from Annex A",    "secOtherRes6CashorLOC": "Additional reserve cash or LOC as of securitization from Annex A",    "secOtherRes6LOCCntpty": "Additional reserve LOC counterparty as of securitization from Annex A",    "secLockboxFlag": "If Securitization Lockbox Type is populated; Y, else N",    "secLockboxType": "Lockbox Type or Cash Management as of securitization from Annex A",    "secAdditionalCFPledge": "Additional Cash Flow Pledge as of securitization from Annex A",    "secLatestFYEActualCFAmt": "Latest FYE Actual Cash Flow Amount (Pledged amount net of all mortgage and mezzanine debt service) as of securitization from Annex A",    "secAnnualCFAmount": "Annual Cash Flow Amount (Pledged amount net of all mortgage and mezzanine debt service) as of securitization from Annex A",    "secLockbox": "Lockbox as of securitization from Annex A",    "secTILCRes": "TI/LC Reserve as of securitization from Annex A",    "singleTenantFlag": "Is single tenant (Y/N)",    "sec3rdMRRevenues": "Revenues for the third most recent period as of securitization from Annex A",    "sec2ndMRRevenues": "Revenues for the second most recent period as of securitization from Annex A",    "secMRRevenues": "Revenues for the most recent period as of securitization from Annex A",    "sec3rdMRExp": "Expenses for the third most recent period as of securitization from Annex A",    "sec2ndMRExp": "Expenses for the second most recent period as of securitization from Annex A",    "secMRExp": "Expenses for the most recent period as of securitization from Annex A",    "lessee4": "Name of fourth largest tenant as of securitization (unnormalized)",    "leaseSqFt4": "Square footage occupied by fourth largest tenant as of securitization",    "leasePct4": "Percentage of square footage occupied by fourth largest tenant as of securitization",    "leaseExpDt4": "Expiration date of lease of fourth largest tenant as of securitization (YYYYMMDD)",    "lessee5": "Name of fifth largest tenant as of securitization (unnormalized)",    "leaseSqFt5": "Square footage occupied by fifth largest tenant as of securitization",    "leasePct5": "Percentage of square footage occupied by fifth largest tenant as of securitization",    "leaseExpDt5": "Expiration date of lease of fifth largest tenant as of securitization (YYYYMMDD)",    "totalExposure": "Sum of the Current Ending Scheduled Balance, Cumulative ASER Amount, Total P&I Advance Outstanding, Total T&I Advance Outstanding, Other Expense Advance Outstanding, Cumulative Accrued Unpaid Advance Interest",    "exposure1": "Based on availability of Largest Current Tenant else Largest Tenant. Exposure Balance (Largest Tenant Percent or Largest Current Tenant Percent * Current Ending Scheduled Balance) / Current Balance of Deal",    "exposure2": "Based on availability of 2nd Largest Current Tenant else Second Largest Tenant. Exposure Balance (2nd Largest Tenant Percent or Second Largest Current Tenant Percent * Current Ending Scheduled Balance) / Current Balance of Deal",    "exposure3": "Based on availability of 3rd Largest Current Tenant else Third Largest Tenant. Exposure Balance (3rd Largest Tenant Percent or Third Largest Current Tenant Percent * Current Ending Scheduled Balance) / Current Balance of Deal",    "exposure4": "Based on availability of 4th Largest Current Tenant else Fourth Largest Tenant. Exposure Balance (4th Largest Tenant Percent or Fourth Largest Current Tenant Percent * Current Ending Scheduled Balance) / Current Balance of Deal",    "exposure5": "Based on availability of 5th Largest Current Tenant else Fifth Largest Tenant. Exposure Balance (5th Largest Tenant Percent or Fifth Largest Current Tenant Percent * Current Ending Scheduled Balance) / Current Balance of Deal",    "curLessee4": "At a property level the name of the tenant that leases the fourth largest square feet of the property based on the most recent annual lease rollover review. If tenant is not occupying the space but is still paying rent, the servicer may print \"Dark\" after tenant name. If tenant has sub-leased space, may print \"Sub-leased/name\" after tenant name. For Office, Retail, Industrial, Other or Mixed Use property types as applicable",    "curLeaseSqFt4": "Total square feet leased by the 5th largest tenant in P94. Based on the most recent annual lease roll over review",    "lesseePctCurr4": "Percentage of square footage occupied by fourth largest current tenant",    "curLeaseExpDt4": "Expiration date of lease of fourth largest current tenant (YYYYMMDD)",    "curLessee5": "At a property level the name of the tenant that leases the fifth largest square feet of the property based on the most recent annual lease rollover review. If tenant is not occupying the space but is still paying rent, the servicer may print \"Dark\" after tenant name. If tenant has sub-leased space, may print \"Sub-leased/name\" after tenant name. For Office, Retail, Industrial, Other or Mixed Use property types as applicable",    "curLeaseSqFt5": "Total square feet leased by the 5th largest tenant in P94. Based on the most recent annual lease roll over review",    "lesseePctCurr5": "Percentage of square footage occupied by fifth largest current tenant",    "curLeaseExpDt5": "Expiration date of lease of fifth largest current tenant (YYYYMMDD)",    "secDefMaintResUpfront": "Upfront Deferred Maintenace Reserve as of securitization from Annex A",    "secEnvironmentalResUpfront": "Upfront Environmental Reserve as of securitization from Annex A",    "loanModTreppEquity": "The equity a borrower puts into a property as part of a modification",    "modifiedRateTreppSecondary": "Second modified rate based on modification report",    "loanModTreppSecondaryDt": "Second actual date when modification of loan terms were reflected in the Trepp model",    "loanModTreppSecondaryDesc": "Second Trepp internally generated long description concerning modification",    "loanModTreppSecndSubordLevel": "Second note subordinate level with structure of Hope Note",    "loanModTreppSecndPrinForgive": "Second amount of outstanding debt borrower no longer needs to return, based on modification agreement between special servicer and borrower",    "loanModTreppSecondaryUnavail": "Second flag indicating full modification information was not made available in CREFC data so model may not be fully changed (Y = No modification data available; P = Partial modification date available)",    "loanModTreppSecondaryEquity": "The equity a borrower puts into a property as part of a 2nd modification",    "speclServicerTransferReason": "Codes showing reason for transfer to special servicer. See Reason for SS Transfer Legend",    "cumReimburseAdvancesNonTrust": "The cumulative amounts recovered from the trust fund until collected from the borrower or other loan proceeds. Includes nonrecoverable advances and modification delayed amounts reported in L122 and L148. Recovery would typically occur upon Liquidation or Maturity of the loan. Items reported here will typically affect the Realized Loss forms of the loan",    "nonCashPrincipalAdjustment": "Any non-cash amounts that would cause the principal balance of the loan to be decreased or increased in the current period which are not considered Unscheduled Principal Collections, Other Principal Adjustments, and are not Scheduled Principal Amounts. Examples include write-offs and modifications. For modifications, refer to the definition in the respective PSAs. A negative amount should be reported for an increase in the balance, and a positive amount should be reported for a decrease in the balance",    "loanModifiedBookDt": "Date of most recent modification is booked onto the Masters servicing system and all updated information is now being reported. If no modification has occurred, then field should be left empty. For further clarification, a modification would include any material change to the existing loan documents, excluding assumptions",    "loanModifiedExecutionDt": "Date of most recent modification was executed by the Special Servicer. If no modification has occurred, then field should be left empty. For further clarification, a modification would include any material change to the existing loan documents, excluding assumptions",    "curPeriodAdjToTrustOther": "Should equal additional proceeds less additional expenses in the current period not attributed to an adjustment to the amount of Liquidation Proceeds allocable to principal. A positive number represents additional proceeds and a negative number represents a reduction of proceeds available to the trust. The Servicer's determination that additional proceeds have been received that are not allocable to principal is not a determination of whether there should be an adjustment at the bond level, which shall be determined by the governing servicing documents",    "seismicZoneFlag": "Seismic Zone Flag as referenced in Annex A (Y/N)",    "curLoanMasterServicer": "The entity responsible for collection of the mortgage payments and accounting for the securitization as well as for remitting all collections and reporting all data to the Trustee/Certificate Administrator so that it can be forwarded to the certificateholders. This entity also protects the interests of CMBS certificateholders by actively administering the mortgage loans and collateral that are the security for the bondholders' investment. See Master Servicer Legend",    "curLoanSpecialServicer": "The entity responsible for the analysis, resolution and disposition of problem or defaulted loans. The Special Servicer handles collections after delinquencies, workouts, oreclosures and real estate owned (REO). The Special Servicer field should be populated for all loans to include the named Special Servicer for that loan. See Special Servicer Legend",    "loanToValue2": "Derived LTV#2: Outstanding scheduled principal balance at end of current period divided by appraisal * 100 (see Derived LTV #2 Code for appraisal source)",    "loanToValue2TypeCd": "Source of derived LTV #2(see Derived Credit Data Codes)",    "cumulativeWODRA": "Total WODRA amount as of the current period",    "curRentableArea": "The current net rentable square feet area of a property as of the determination date.  This field should be utilized for Office, Retail, Industrial, Warehouse, and Mixed Use properties.  If there are multiple properties, and all the same Property Type, sum the values.  If not all the same Property Type or if any are missing, then leave field empty",    "curBalancePerSqFtOrUnit": "Outstanding scheduled principal balance divided by current rentable area or current number of units",    "curNumUnits": "The current number of units/beds/rooms of a property as of the determination date.  This field should be utilized for Multifamily, Cooperative Housing, Mobile Home Parks and Self Storage (units), Healthcare (beds), and Lodging (rooms).  If there are multiple properties, and all the same Property Type, sum the values.  If not all the same Property Type or if any are missing, then leave field empty",    "sec2ndMRDateType": "Description of the period for the financials reported for the second most recent period as of securitization from Annex A",    "sec3rdMRDateType": "Description of the period for the financials reported for the third most recent period as of securitization from Annex A",    "loanModifiedDerivedNumber": "Total number of loan modifications as of current reporting period",    "apprValueLTVPct": "For European loans only.  For pari-passu loans, the percent of the loan that is in the deal.  For correctly calculating LTV when only a piece of a loan is in the deal",    "modelFirstOpenDt": "First date the loan is eligible to prepay without incurring any penalities",    "msaRank": "Trepp Derived MSA Rank by population",    "notePaysWhichTrn": "Name of Tranche(s) paid by this loan",    "pctExp1to12Mon": "The percentage of leases, as reflected on the rent roll utilized for the Date Lease Rollover Review, that are expiring in months 1 to 12.  Months 1 to 12 should include month to month leases.  This field should be derived using the total net rentable square feet reflected on the rent roll as the denominator (not the Net Rentable Square Fee at Contribution).  The vacancy percentage should not be included in this field. This analysis applies to Property Types - RT, IN, OF, MU, OT",    "pctExp13to24Mon": "The percentage of leases, as reflected on the rent roll utilized for the Date Lease Rollover Review, that are expiring in 13 to 24 months.  This field should be derived using the total net rentable square feet reflected on the rent roll as the denominator (not the Net Rentable Square Fee at Contribution).  The vacancy percentage should not be included in this field.  This analysis applies to Property Types - RT, IN, OF, MU, OT",    "pctExp25to36Mon": "The percentage of leases, as reflected on the rent roll utilized for the Date Lease Rollover Review, that are expiring in 25 to 36 months.  This field should be derived using the total net rentable square feet reflected on the rent roll as the denominator (not the Net Rentable Square Fee at Contribution).  The vacancy percentage should not be included in this field.  This analysis applies to Property Types - RT, IN, OF, MU, OT",    "pctExp37to48Mon": "The percentage of leases, as reflected on the rent roll utilized for the Date Lease Rollover Review, that are expiring in 37 to 48 months.  This field should be derived using the total net rentable square feet reflected on the rent roll as the denominator (not the Net Rentable Square Fee at Contribution).  The vacancy percentage should not be included in this field.  This analysis applies to Property Types - RT, IN, OF, MU, OT",    "pctExp49to60Mon": "The percentage of leases, as reflected on the rent roll utilized for the Date Lease Rollover Review, that are expiring in 49+ months.  This field should be derived using the total net rentable square feet reflected on the rent roll as the denominator (not the Net Rentable Square Fee at Contribution).  The vacancy percentage should not be included in this field.  This analysis applies to Property Types - RT, IN, OF, MU, OT",    "noincf": "Trepp derived NOI/NCF value",    "DSCRAsOf": "Source of derived NOI/NCF (see Derived Credit Data Codes)",    "loanPiecesExist": "Indicates if loan is pari passu, part of a split loan or cross collateralized",    "defeasableRemainToFirst": "Number of periods until Defeasance can occur",    "reportingPeriodBeginDt": "Reporting period begin date for the first reporting cycle is equal to Closing Date, otherwise it should be populated as the prior month Determination Date plus 1 day.  SS reporting period should follow same as MS",    "reportingPeriodEndDt": "Reporting period end date should be the determination date.  SS reporting period should follow same as MS",    "modifiedLoanIndicatorFlag": "If the loan has been modified or subject to a forebearance, this field should have a Y, otherwise an N should be populated (1=Y, 0=N)",    "assetSubjectToDemandFlag": "Y or N field, defined as whether during the reporting period the loan was subject of a demand to repurchase or replace due to a breach of reps & warranties, including demands upon Trustee (1=Y, 0=N)",    "assetSubjectToDemandStatus": "If the asset was subject to demand indicate the code from the Legend of the Asset Subject to Demand Code that describes the status of the demand at the end of the reporting period.  Use Asset Subj to Demand Status Code Legend",    "demandResolutionDt": "The date the asset was repurchased or the demand was withdrawn, settled or rejected",    "repurchaseReplaceReason": "Indicate the reason for the repurchase or replacement.  Use Repurchase Replacement Reason Code legend",    "postModificationAmortizationPeriod": "If the Modification Indicator is Y and there has been a change to the amortization period from the original loan term, calculate the amortization as the number of months required to retire the mortgage loan through modified payments, as determined at the modification date",    "curNonRecoverableInterest": "Scheduled Interest that would have been due to the Trust in the current period if the loan had not been deemed Non Recoverable as well as recoveries of amounts reported in prior reporting periods through this field.  Should be the mathematical change in the Cumulative Non Recoverable Interest from the prior reporting period to the current reporting period, and therefore may be negative in instances where the amount of recoveries exceed the Current scheduled Non Recoverable Interest.  This value is informational only, collections of Non Recoverable Interest (not previously advanced) should also be entered in field L102 - Other Interest Adjustment",    "cumulativeNonRecoverableInterest": "Subtotal of Non Recoverable Interest not yet paid to the Trust.  This value should be the Cumulative Non Recoverable Interest from the prior reporting period plus the Current Non Recoverable Interest for the current reporting period.  This value should not be impacted by amounts in L128 or L122.  For liquidations / payoffs if the prior amounts are not fully recovered the amount remaining should be populated in the month of liquidation and then be blank in subsequent months",    "leadTransactionID": "Lead Transaction ID as outlined in the Servicing Agreement",    "cumulativeARDInterest": "Anticipated Repayment Date (ARD) Interest occurs when interest accrued for the period exceeds the amount of interest required to be paid for the period.  The requirement to pay the accrued ARD interest may be deferred to a future period.  This field should be populated with the cumulative ARD interest outstanding for the current and prior reporting periods net of any ARD Interest Collected in L147",    "ARDInterestCollected": "Amount of Anticipated Repayment Date interest that is collected for the current reporting period",    "curMonthAdvancedByTrustWODRAToServicer": "Amount of shortfall to the trust related to the current month reimbursement of funds to the servicer for advances recovered via Workout Delayed Reimbursement Amounts per the PSA.  This results in a reduction to the cash flow to the trust.  Amounts in L148 should be added to cumulative field L128",    "disclosableSpecialServicingFees": "Disclosable fees paid to the Special Servicer per the applicable Servicing Agreement",    "repurchaseAmt": "Provide the amount paid to repurchase the loan from the pool",    "excessLiquidationProceeds": "Amount of excess liquidation proceeds collected.  To be used in situations where an asset sells for more than the total exposure to the trust",    "secPurchasePrice": "Original Purchase Price of the property",    "secClosingCosts": "Total Closing Costs associated with the purchase of the property",    "totSecCostBasisPostRehab": "Total Acquisition Cost including Renovation",    "secAnnualContractualRent": "Annual Contracted Rent as of Securitization",    "rentedFlag": "Flag indicating if property was rented as of Securitization",    "leaseStartDt": "Contracted Rent Agreement Start Date as of Securitization",    "origLeaseTerm": "Contracted Rent Agreement Term as of Securitization",    "totSecCostBasisPreRehab": "Total Acquisition Cost not including Renovation",    "lifeIndexCapBorrower": "Strike rate of borrower purchased lifetime index cap",    "defeasStatusRaw": "A code indicating if a loan has or is able to be defeased.  See Defeasance Status Legend.  When a loan becomes \"Full Defeasance\", at a minimum populate Property Status (P18) with 3, populate Property Type (P13) with SE, populate Property Name with \"Defeased\", and preceding year, second preceding year and most recent operating performance related data fields, lease and tenant related data fields and property condition related data fields should be left empty",    "correctedStatus": "Loan was previously sent to Special Servicing but has since been returned to the Master Servicer",    "defeasanceToMaturityFlag": "Defeasance To Maturity Flag as of securitization",    "curCrossCollateralizationNum": "A mechanism whereby the properties that collateralize the individual loans are pledged against all loans to the same borrowing entity. It is a method used to enhance credit quality of the collateral. For example: \"X02-1\" would be populated in this field for all related loans, \"X02-2\" would be populated for the 2nd group of related loans.",    "agencyID": "Agency provided cusips related to the pool",    "curSecurityType": "Current security type for Ginnie Mae project loans",    "resecuritizedFlag": "Y or N field, Trepp derived to determine if a property has been previously securitized. If a multi-prop in a portfolio is marked with Y, the loan portfolio will have a Y. For pari passu and split loans, only the first securitized piece or original loan will be marked with Y if applicable.",    "pariPassuSecBal": "Calculated using the trust balance and non-trust balance provided in the Annex A or prospectus as of securitization",    "pariPassuPct": "Percentage of the pari passu piece in the trust as of securitization",    "secLeadMasterServicer": "The Master Servicer for a pari passu loan as of securitization",    "secLeadSpecialServicer": "The Special Servicer for a pari passu loan as of securitization",    "secControllingNoteHolder": "Controlling Note Holder for each pari passu loan as the pari passu pieces are being securitized.",    "covenantDebtYield": "Minimum DY value the borrower is required to maintain",    "secAppraiser": "Appraiser Party that carried out the property inspection as of securitization, for European loans only.",    "engineeringRptDt": "Engineering Report Date as of securitization",    "environmentalPhase1RptDt": "Environmental Phase I Report Date as of securitization",    "environmentalPhase2RptDt": "Environmental Phase II Report Date as of securitization",    "seismicPMLPct": "PML (Probable Maximum Loss) as of securitization",    "seismicRptDt": "Seismic Report Date as of securitization",    "terrorismInsuranceFlag": "Terrorism Insurance Flag as of securitization",    "earthquakeInsuranceFlag": "Earthquake Insurance Required Flag as of securitization",    "environmentalPhase2Flag": "Environmental Phase II Flag as of securitization",    "environmentalInsuranceFlag": "Environmental Insurance Flag as of securitization",    "SPEFlag": "SPE Flag as of securitization",    "greenProgram": "Name of the Green Program in which the loan is participating, for Freddie Mac and Fannie Mae deals only",    "greenCertifications": "The type of Green Building Certification applicable for the loan; for Fannie Mae deals only",    "lowIncomeUnits": "Low Income Units as of securitization",    "veryLowIncomeUnits": "Very Low Income Units as of securitization",    "rentalSubsidyIndicatorFlag": "Rental Subsidy Indicator as of securitization",    "rentalSubsidyType": "Rental Subsidy Type as of securitization",    "secTerminationOptionFlag1": "Termination Option allowable for largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secTerminationOptionFlag2": "Termination Option allowable for second largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secTerminationOptionFlag3": "Termination Option allowable for third largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secTerminationOptionFlag4": "Termination Option allowable for fourth largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secTerminationOptionFlag5": "Termination Option allowable for fifth largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secEarlyLeaseTerminationDt1": "Date of Lease Termination of largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secEarlyLeaseTerminationDt2": "Date of Lease Termination of second largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secEarlyLeaseTerminationDt3": "Date of Lease Termination of third largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secEarlyLeaseTerminationDt4": "Date of Lease Termination of fourth largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "secEarlyLeaseTerminationDt5": "Date of Lease Termination of fifth largest tenant at securitization. Not applicable for following property types: CH,HC,MF,MH,SS,LO",    "balloonLTVtotalMortgage": "Balloon LTV based on securitized debt and pari passu debt and B note as specified in Annex A; never calculated",    "secTotalMortgageDSCRNOI": "DSCR based on NOI, includes securitized debt and pari passu debt and B note as of securitization from Annex A",    "secTotalMortgageDSCRNCF": "DSCR based on NCF, includes securitized debt and pari passu debt and B note as of securitization from Annex A",    "secTotalMortgageDebtYieldNOI": "Debt Yield NOI based on securitized debt and pari passu debt and B note as of securitization from Annex A",    "secTotalMortgageDebtYieldNCF": "Debt Yield NCF based on securitized debt and pari passu debt and B note as of securitization from Annex A",    "secTotalMortgageLTV": "LTV based on securitized debt and pari passu debt and B note as of securitization from Annex A",    "secTotalMortgageDebtServiceIO": "Annual Total scheduled interest payment based on securitized debt and pari passu debt and B note as of securitization",    "secTotalMortgageDebtservice": "Annual total scheduled principal and interest payment based on securitized debt and pari passu debt and B note as of securitization",    "secJuniorBalance": "Subordinate debt balance (does not include Mezzanine balance) as of securitization",    "secMezzBalance": "Mezzanine debt balance as of securitization",    "secAppraisedValueAsIs": "Securitization appraised value from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secAppraisalAsIsDt": "Date of securitization appraised value from Annex A (YYYYMMDD) based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secLTVAsIs": "Securitization LTV from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secOccupancyRateAsIs": "Securitization occupancy rate from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secRevenuesAsIs": "Securitization revenues from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secExpensesAsIs": "Securitization expenses from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secNOIAsIs": "Securitization NOI from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secReplacementReserveAsIs": "Replacement Reserve as of securitization from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secNCFAsIs": "Securitization NCF from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secDSCRNOIAsIs": "Securitization DSCR based upon NOI from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secDSCRNCFAsIs": "Securitization DSCR based upon NCF from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secDebtYieldNOIAsIs": "Debt Yield based on NOI as of securitization from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secDebtYieldNCFAsIs": "Debt Yield based on NCF as of securitization from Annex A based on as-is or then current conditions and occupancies. Does not include assumptions regarding planned, assumed or future renovations, lease-up, occupancy, or rental rates",    "secMRDSCRNOI": "DSCR (NOI) for the most recent period as of securitization",    "secMRDSCRNCF": "DSCR (NCF) for the most recent period as of securitization",    "secMRDebtYieldNCF": "Debt yield based on NCF for the most recent period as of securitization",    "sec2ndMRDSCRNOI": "DSCR (NOI) for the second most recent period as of securitization",    "sec2ndMRDSCRNCF": "DSCR (NCF) for the second most recent period as of securitization",    "sec2ndMRDebtYieldNCF": "Debt yield based on NCF for the second most recent period as of securitization",    "sec3rdMRDSCRNOI": "DSCR (NOI) for the third most recent period as of securitization",    "sec3rdMRDSCRNCF": "DSCR (NCF) for the third most recent period as of securitization",    "sec3rdMRDebtYieldNCF": "Debt yield based on NCF for the most recent period as of securitization"}
+
+# Actual schema
+actual_schema = [
+  {
+    "Name": "dosname",
+    "Type": "string"
+  },
+  {
+    "Name": "poolnum",
+    "Type": "string"
+  },
+  {
+    "Name": "collateralid",
+    "Type": "string"
+  },
+  {
+    "Name": "distdate",
+    "Type": "bigint"
+  },
+  {
+    "Name": "disposedamount",
+    "Type": "double"
+  },
+  {
+    "Name": "dispositiondt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "lastpaidthrudt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "monthstorecover",
+    "Type": "bigint"
+  },
+  {
+    "Name": "disposedprepaypenalty",
+    "Type": "double"
+  },
+  {
+    "Name": "calcpenaltypct",
+    "Type": "double"
+  },
+  {
+    "Name": "lossamount",
+    "Type": "double"
+  },
+  {
+    "Name": "calclosspct",
+    "Type": "double"
+  },
+  {
+    "Name": "dispositiontype",
+    "Type": "string"
+  },
+  {
+    "Name": "dispositionsubtype",
+    "Type": "string"
+  },
+  {
+    "Name": "dispositioncomments",
+    "Type": "string"
+  },
+  {
+    "Name": "prepaymentexposureamt",
+    "Type": "double"
+  },
+  {
+    "Name": "prepaymentexposurepct",
+    "Type": "double"
+  },
+  {
+    "Name": "masterloanidtrepp",
+    "Type": "bigint"
+  },
+  {
+    "Name": "notenum",
+    "Type": "double"
+  },
+  {
+    "Name": "acrossdealsloanidtrepp",
+    "Type": "string"
+  },
+  {
+    "Name": "notepctpledged",
+    "Type": "double"
+  },
+  {
+    "Name": "loanindeals",
+    "Type": "string"
+  },
+  {
+    "Name": "curwholeloanbal",
+    "Type": "double"
+  },
+  {
+    "Name": "closedatepermext",
+    "Type": "string"
+  },
+  {
+    "Name": "origloanbaltrustee",
+    "Type": "double"
+  },
+  {
+    "Name": "liqsalesprice",
+    "Type": "double"
+  },
+  {
+    "Name": "amtduesvcandtrustee",
+    "Type": "double"
+  },
+  {
+    "Name": "amtheldfuturepmt",
+    "Type": "double"
+  },
+  {
+    "Name": "accruedint",
+    "Type": "double"
+  },
+  {
+    "Name": "addltrustfundexpense",
+    "Type": "double"
+  },
+  {
+    "Name": "currperadjtotrust",
+    "Type": "double"
+  },
+  {
+    "Name": "currperadjtotrustdate",
+    "Type": "bigint"
+  },
+  {
+    "Name": "cumminoradjtotrust",
+    "Type": "double"
+  },
+  {
+    "Name": "currmoreimbadvtosvc",
+    "Type": "double"
+  },
+  {
+    "Name": "reimbadvtosvcleft",
+    "Type": "double"
+  },
+  {
+    "Name": "othintshortfallsorrefunds",
+    "Type": "double"
+  },
+  {
+    "Name": "numnotes",
+    "Type": "bigint"
+  },
+  {
+    "Name": "securoterm",
+    "Type": "bigint"
+  },
+  {
+    "Name": "ardflag",
+    "Type": "string"
+  },
+  {
+    "Name": "legalmaturitydate",
+    "Type": "bigint"
+  },
+  {
+    "Name": "guarantorandsponsor",
+    "Type": "string"
+  },
+  {
+    "Name": "country",
+    "Type": "string"
+  },
+  {
+    "Name": "mfdirected",
+    "Type": "string"
+  },
+  {
+    "Name": "dlqhist",
+    "Type": "string"
+  },
+  {
+    "Name": "dlqhistall",
+    "Type": "bigint"
+  },
+  {
+    "Name": "curmonlock",
+    "Type": "bigint"
+  },
+  {
+    "Name": "curmonymc",
+    "Type": "bigint"
+  },
+  {
+    "Name": "curmonpp",
+    "Type": "bigint"
+  },
+  {
+    "Name": "securmonlock",
+    "Type": "bigint"
+  },
+  {
+    "Name": "securmonymc",
+    "Type": "bigint"
+  },
+  {
+    "Name": "securmonpp",
+    "Type": "bigint"
+  },
+  {
+    "Name": "prepaycategory",
+    "Type": "string"
+  },
+  {
+    "Name": "firstcallperiod",
+    "Type": "bigint"
+  },
+  {
+    "Name": "perpastmaturity",
+    "Type": "bigint"
+  },
+  {
+    "Name": "extoption1",
+    "Type": "bigint"
+  },
+  {
+    "Name": "extoption2",
+    "Type": "bigint"
+  },
+  {
+    "Name": "extoption3",
+    "Type": "bigint"
+  },
+  {
+    "Name": "extoption4",
+    "Type": "string"
+  },
+  {
+    "Name": "extoption5",
+    "Type": "string"
+  },
+  {
+    "Name": "mrfytdicrnoi",
+    "Type": "string"
+  },
+  {
+    "Name": "mrfytdicrncf",
+    "Type": "string"
+  },
+  {
+    "Name": "priorfyicrnoi",
+    "Type": "string"
+  },
+  {
+    "Name": "priorfyicrncf",
+    "Type": "string"
+  },
+  {
+    "Name": "secpriorfyicrnoi",
+    "Type": "string"
+  },
+  {
+    "Name": "secpriorfyicrncf",
+    "Type": "string"
+  },
+  {
+    "Name": "icrnoi",
+    "Type": "string"
+  },
+  {
+    "Name": "icrnoiasof",
+    "Type": "string"
+  },
+  {
+    "Name": "icrncf",
+    "Type": "string"
+  },
+  {
+    "Name": "icrncfasof",
+    "Type": "string"
+  },
+  {
+    "Name": "curicr",
+    "Type": "string"
+  },
+  {
+    "Name": "icrasof",
+    "Type": "string"
+  },
+  {
+    "Name": "securicrnoi",
+    "Type": "string"
+  },
+  {
+    "Name": "securicrncf",
+    "Type": "string"
+  },
+  {
+    "Name": "securicrnoincf",
+    "Type": "string"
+  },
+  {
+    "Name": "covenanticrtext",
+    "Type": "string"
+  },
+  {
+    "Name": "covenantdscrtext",
+    "Type": "string"
+  },
+  {
+    "Name": "covenantltvtext",
+    "Type": "string"
+  },
+  {
+    "Name": "covenantothertext",
+    "Type": "string"
+  },
+  {
+    "Name": "cdoassettype",
+    "Type": "string"
+  },
+  {
+    "Name": "currlockboxstatus",
+    "Type": "string"
+  },
+  {
+    "Name": "cumdefint",
+    "Type": "double"
+  },
+  {
+    "Name": "defintcoll",
+    "Type": "double"
+  },
+  {
+    "Name": "yrrenov",
+    "Type": "bigint"
+  },
+  {
+    "Name": "secioperiods",
+    "Type": "bigint"
+  },
+  {
+    "Name": "secpmt",
+    "Type": "double"
+  },
+  {
+    "Name": "secdebtserv",
+    "Type": "double"
+  },
+  {
+    "Name": "loanpurpose",
+    "Type": "string"
+  },
+  {
+    "Name": "extensiontype",
+    "Type": "string"
+  },
+  {
+    "Name": "totremextperiods",
+    "Type": "bigint"
+  },
+  {
+    "Name": "l_specialservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmoddttrepp",
+    "Type": "bigint"
+  },
+  {
+    "Name": "loanmodderivedstatus",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmoddesctrepp",
+    "Type": "string"
+  },
+  {
+    "Name": "modderivedloanmoddesc",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodunavailtrepp",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodsubordleveltrepp",
+    "Type": "string"
+  },
+  {
+    "Name": "modhopenoteexists",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodprinforgivetrepp",
+    "Type": "string"
+  },
+  {
+    "Name": "modratetrepp",
+    "Type": "double"
+  },
+  {
+    "Name": "modioperiodchange",
+    "Type": "bigint"
+  },
+  {
+    "Name": "modotermchange",
+    "Type": "bigint"
+  },
+  {
+    "Name": "splitreason",
+    "Type": "string"
+  },
+  {
+    "Name": "splitdate",
+    "Type": "string"
+  },
+  {
+    "Name": "splitcross",
+    "Type": "bigint"
+  },
+  {
+    "Name": "derivedloanstatus",
+    "Type": "string"
+  },
+  {
+    "Name": "newlydq",
+    "Type": "string"
+  },
+  {
+    "Name": "newlyspecserv",
+    "Type": "string"
+  },
+  {
+    "Name": "newlywatchlist",
+    "Type": "string"
+  },
+  {
+    "Name": "derivedsecnoidebtyield",
+    "Type": "double"
+  },
+  {
+    "Name": "derivedcurnoidebtyield",
+    "Type": "double"
+  },
+  {
+    "Name": "derivedsecncfdebtyield",
+    "Type": "double"
+  },
+  {
+    "Name": "derivedcurncfdebtyield",
+    "Type": "double"
+  },
+  {
+    "Name": "curmonaged",
+    "Type": "bigint"
+  },
+  {
+    "Name": "curamorttype",
+    "Type": "string"
+  },
+  {
+    "Name": "regiontext",
+    "Type": "string"
+  },
+  {
+    "Name": "swapfixedrate",
+    "Type": "string"
+  },
+  {
+    "Name": "swapmatdt",
+    "Type": "string"
+  },
+  {
+    "Name": "swapnotionalbal",
+    "Type": "string"
+  },
+  {
+    "Name": "seller",
+    "Type": "string"
+  },
+  {
+    "Name": "affiliatedsponsors",
+    "Type": "string"
+  },
+  {
+    "Name": "loantype",
+    "Type": "string"
+  },
+  {
+    "Name": "fhaprogramflag",
+    "Type": "string"
+  },
+  {
+    "Name": "hotelflag",
+    "Type": "string"
+  },
+  {
+    "Name": "secparipassudebtanote",
+    "Type": "double"
+  },
+  {
+    "Name": "sectotaltrustbalance",
+    "Type": "string"
+  },
+  {
+    "Name": "origholdback",
+    "Type": "string"
+  },
+  {
+    "Name": "lastiopmtdt",
+    "Type": "string"
+  },
+  {
+    "Name": "firstpmtdtpandi",
+    "Type": "bigint"
+  },
+  {
+    "Name": "fullyextendedmatdt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "secamorttype",
+    "Type": "string"
+  },
+  {
+    "Name": "secmasterservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "secspecialservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtserviceio",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtserviceioallin",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtservicepandiallin",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtyieldnoiallin",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtyieldncfallin",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtyieldnoinew",
+    "Type": "double"
+  },
+  {
+    "Name": "secdebtyieldncfnew",
+    "Type": "double"
+  },
+  {
+    "Name": "secnoidscramortpi",
+    "Type": "string"
+  },
+  {
+    "Name": "secnetcfdscramortpi",
+    "Type": "string"
+  },
+  {
+    "Name": "secnoidscrio",
+    "Type": "string"
+  },
+  {
+    "Name": "secnetcfdscrio",
+    "Type": "string"
+  },
+  {
+    "Name": "secdscramortallin",
+    "Type": "string"
+  },
+  {
+    "Name": "secnetcfdscramortallin",
+    "Type": "string"
+  },
+  {
+    "Name": "secltvallin",
+    "Type": "string"
+  },
+  {
+    "Name": "secmatdtltvallin",
+    "Type": "string"
+  },
+  {
+    "Name": "sec3rdmrenddt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "sec3rdmregi",
+    "Type": "string"
+  },
+  {
+    "Name": "sec3rdmroperexp",
+    "Type": "string"
+  },
+  {
+    "Name": "sec3rdmrnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmrcapexp",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmrncf",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmroccpancypct",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmrdebtyieldnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrenddt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "sec2ndmregi",
+    "Type": "string"
+  },
+  {
+    "Name": "sec2ndmroperexp",
+    "Type": "string"
+  },
+  {
+    "Name": "sec2ndmrnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrcapexp",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrncf",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmroccpancypct",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrdebtyieldnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrbegdt",
+    "Type": "string"
+  },
+  {
+    "Name": "secmrenddt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "secmrdttype",
+    "Type": "string"
+  },
+  {
+    "Name": "secmregi",
+    "Type": "string"
+  },
+  {
+    "Name": "secmroperexp",
+    "Type": "string"
+  },
+  {
+    "Name": "secmrnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrcapexp",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrncf",
+    "Type": "double"
+  },
+  {
+    "Name": "secmroccpancypct",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrdebtyieldnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "secegi",
+    "Type": "double"
+  },
+  {
+    "Name": "secexpensesoper",
+    "Type": "string"
+  },
+  {
+    "Name": "secreplaceres",
+    "Type": "double"
+  },
+  {
+    "Name": "secexpensescap",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmradr",
+    "Type": "string"
+  },
+  {
+    "Name": "sec3rdmrrevpar",
+    "Type": "string"
+  },
+  {
+    "Name": "sec2ndmradr",
+    "Type": "string"
+  },
+  {
+    "Name": "sec2ndmrrevpar",
+    "Type": "string"
+  },
+  {
+    "Name": "secmradr",
+    "Type": "string"
+  },
+  {
+    "Name": "secmrrevpar",
+    "Type": "string"
+  },
+  {
+    "Name": "secadr",
+    "Type": "string"
+  },
+  {
+    "Name": "secrevpar",
+    "Type": "string"
+  },
+  {
+    "Name": "sectaxescupfront",
+    "Type": "double"
+  },
+  {
+    "Name": "sectaxescmonthly",
+    "Type": "double"
+  },
+  {
+    "Name": "sectaxesccashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "sectaxescloccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secinsescupfront",
+    "Type": "double"
+  },
+  {
+    "Name": "secinsescmonthly",
+    "Type": "double"
+  },
+  {
+    "Name": "secinsesccashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secinsescloccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secreplaceresupfront",
+    "Type": "double"
+  },
+  {
+    "Name": "secreplaceresmonthly",
+    "Type": "double"
+  },
+  {
+    "Name": "secreplacerescap",
+    "Type": "string"
+  },
+  {
+    "Name": "secreplacerescashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secrepresescloccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "sectilcresupfront",
+    "Type": "double"
+  },
+  {
+    "Name": "sectilcresmonthly",
+    "Type": "double"
+  },
+  {
+    "Name": "sectilcrescap",
+    "Type": "double"
+  },
+  {
+    "Name": "sectilcrescashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "sectilcresloccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtsvcresupfront",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtsvcresmonthly",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtsvcrescap",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtsvcrescashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secdebtsvcescloccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres1type",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres1upfront",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres1monthly",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres1cap",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres1cashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres1loccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres2type",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres2upfront",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres2monthly",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres2cap",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres2cashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres2loccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres3type",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres3upfront",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres3monthly",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres3cap",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres3cashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres3loccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres4type",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres4upfront",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres4monthly",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres4cap",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres4cashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres4loccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres5type",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres5upfront",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres5monthly",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres5cap",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres5cashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres5loccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres6type",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres6upfront",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres6monthly",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres6cap",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres6cashorloc",
+    "Type": "string"
+  },
+  {
+    "Name": "secotherres6loccntpty",
+    "Type": "string"
+  },
+  {
+    "Name": "seclockboxflag",
+    "Type": "string"
+  },
+  {
+    "Name": "seclockboxtype",
+    "Type": "string"
+  },
+  {
+    "Name": "secadditionalcfpledge",
+    "Type": "string"
+  },
+  {
+    "Name": "seclatestfyeactualcfamt",
+    "Type": "string"
+  },
+  {
+    "Name": "secannualcfamount",
+    "Type": "string"
+  },
+  {
+    "Name": "seclockbox",
+    "Type": "string"
+  },
+  {
+    "Name": "sectilcres",
+    "Type": "double"
+  },
+  {
+    "Name": "singletenantflag",
+    "Type": "string"
+  },
+  {
+    "Name": "sec3rdmrrevenues",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrrevenues",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrrevenues",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmrexp",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrexp",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrexp",
+    "Type": "double"
+  },
+  {
+    "Name": "lessee4",
+    "Type": "string"
+  },
+  {
+    "Name": "leasesqft4",
+    "Type": "double"
+  },
+  {
+    "Name": "leasepct4",
+    "Type": "double"
+  },
+  {
+    "Name": "leaseexpdt4",
+    "Type": "bigint"
+  },
+  {
+    "Name": "lessee5",
+    "Type": "string"
+  },
+  {
+    "Name": "leasesqft5",
+    "Type": "double"
+  },
+  {
+    "Name": "leasepct5",
+    "Type": "double"
+  },
+  {
+    "Name": "leaseexpdt5",
+    "Type": "bigint"
+  },
+  {
+    "Name": "totalexposure",
+    "Type": "double"
+  },
+  {
+    "Name": "exposure1",
+    "Type": "double"
+  },
+  {
+    "Name": "exposure2",
+    "Type": "double"
+  },
+  {
+    "Name": "exposure3",
+    "Type": "double"
+  },
+  {
+    "Name": "exposure4",
+    "Type": "double"
+  },
+  {
+    "Name": "exposure5",
+    "Type": "double"
+  },
+  {
+    "Name": "curlessee4",
+    "Type": "string"
+  },
+  {
+    "Name": "curleasesqft4",
+    "Type": "double"
+  },
+  {
+    "Name": "lesseepctcurr4",
+    "Type": "double"
+  },
+  {
+    "Name": "curleaseexpdt4",
+    "Type": "bigint"
+  },
+  {
+    "Name": "curlessee5",
+    "Type": "string"
+  },
+  {
+    "Name": "curleasesqft5",
+    "Type": "double"
+  },
+  {
+    "Name": "lesseepctcurr5",
+    "Type": "double"
+  },
+  {
+    "Name": "curleaseexpdt5",
+    "Type": "bigint"
+  },
+  {
+    "Name": "secdefmaintresupfront",
+    "Type": "double"
+  },
+  {
+    "Name": "secenvironmentalresupfront",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodtreppequity",
+    "Type": "string"
+  },
+  {
+    "Name": "modifiedratetreppsecondary",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodtreppsecondarydt",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodtreppsecondarydesc",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodtreppsecndsubordlevel",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodtreppsecndprinforgive",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodtreppsecondaryunavail",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodtreppsecondaryequity",
+    "Type": "string"
+  },
+  {
+    "Name": "speclservicertransferreason",
+    "Type": "string"
+  },
+  {
+    "Name": "cumreimburseadvancesnontrust",
+    "Type": "double"
+  },
+  {
+    "Name": "noncashprincipaladjustment",
+    "Type": "double"
+  },
+  {
+    "Name": "loanmodifiedbookdt",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodifiedexecutiondt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "curperiodadjtotrustother",
+    "Type": "double"
+  },
+  {
+    "Name": "seismiczoneflag",
+    "Type": "string"
+  },
+  {
+    "Name": "curloanmasterservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "curloanspecialservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "loantovalue2",
+    "Type": "double"
+  },
+  {
+    "Name": "loantovalue2typecd",
+    "Type": "bigint"
+  },
+  {
+    "Name": "cumulativewodra",
+    "Type": "string"
+  },
+  {
+    "Name": "currentablearea",
+    "Type": "double"
+  },
+  {
+    "Name": "curbalancepersqftorunit",
+    "Type": "string"
+  },
+  {
+    "Name": "curnumunits",
+    "Type": "bigint"
+  },
+  {
+    "Name": "sec2ndmrdatetype",
+    "Type": "string"
+  },
+  {
+    "Name": "sec3rdmrdatetype",
+    "Type": "string"
+  },
+  {
+    "Name": "loanmodifiedderivednumber",
+    "Type": "bigint"
+  },
+  {
+    "Name": "apprvalueltvpct",
+    "Type": "string"
+  },
+  {
+    "Name": "modelfirstopendt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "msarank",
+    "Type": "bigint"
+  },
+  {
+    "Name": "notepayswhichtrn",
+    "Type": "string"
+  },
+  {
+    "Name": "pctexp1to12mon",
+    "Type": "double"
+  },
+  {
+    "Name": "pctexp13to24mon",
+    "Type": "double"
+  },
+  {
+    "Name": "pctexp25to36mon",
+    "Type": "double"
+  },
+  {
+    "Name": "pctexp37to48mon",
+    "Type": "double"
+  },
+  {
+    "Name": "pctexp49to60mon",
+    "Type": "double"
+  },
+  {
+    "Name": "noincf",
+    "Type": "double"
+  },
+  {
+    "Name": "dscrasof",
+    "Type": "string"
+  },
+  {
+    "Name": "loanpiecesexist",
+    "Type": "string"
+  },
+  {
+    "Name": "defeasableremaintofirst",
+    "Type": "bigint"
+  },
+  {
+    "Name": "reportingperiodbegindt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "reportingperiodenddt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "modifiedloanindicatorflag",
+    "Type": "bigint"
+  },
+  {
+    "Name": "assetsubjecttodemandflag",
+    "Type": "bigint"
+  },
+  {
+    "Name": "assetsubjecttodemandstatus",
+    "Type": "bigint"
+  },
+  {
+    "Name": "demandresolutiondt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "repurchasereplacereason",
+    "Type": "string"
+  },
+  {
+    "Name": "postmodificationamortizationperiod",
+    "Type": "string"
+  },
+  {
+    "Name": "curnonrecoverableinterest",
+    "Type": "double"
+  },
+  {
+    "Name": "cumulativenonrecoverableinterest",
+    "Type": "double"
+  },
+  {
+    "Name": "leadtransactionid",
+    "Type": "string"
+  },
+  {
+    "Name": "cumulativeardinterest",
+    "Type": "double"
+  },
+  {
+    "Name": "ardinterestcollected",
+    "Type": "double"
+  },
+  {
+    "Name": "curmonthadvancedbytrustwodratoservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "disclosablespecialservicingfees",
+    "Type": "string"
+  },
+  {
+    "Name": "repurchaseamt",
+    "Type": "string"
+  },
+  {
+    "Name": "excessliquidationproceeds",
+    "Type": "string"
+  },
+  {
+    "Name": "secpurchaseprice",
+    "Type": "string"
+  },
+  {
+    "Name": "secclosingcosts",
+    "Type": "string"
+  },
+  {
+    "Name": "totseccostbasispostrehab",
+    "Type": "string"
+  },
+  {
+    "Name": "secannualcontractualrent",
+    "Type": "string"
+  },
+  {
+    "Name": "rentedflag",
+    "Type": "bigint"
+  },
+  {
+    "Name": "leasestartdt",
+    "Type": "string"
+  },
+  {
+    "Name": "origleaseterm",
+    "Type": "string"
+  },
+  {
+    "Name": "totseccostbasisprerehab",
+    "Type": "string"
+  },
+  {
+    "Name": "lifeindexcapborrower",
+    "Type": "string"
+  },
+  {
+    "Name": "defeasstatusraw",
+    "Type": "string"
+  },
+  {
+    "Name": "correctedstatus",
+    "Type": "string"
+  },
+  {
+    "Name": "defeasancetomaturityflag",
+    "Type": "string"
+  },
+  {
+    "Name": "curcrosscollateralizationnum",
+    "Type": "string"
+  },
+  {
+    "Name": "agencyid",
+    "Type": "string"
+  },
+  {
+    "Name": "cursecuritytype",
+    "Type": "string"
+  },
+  {
+    "Name": "resecuritizedflag",
+    "Type": "string"
+  },
+  {
+    "Name": "paripassusecbal",
+    "Type": "double"
+  },
+  {
+    "Name": "paripassupct",
+    "Type": "double"
+  },
+  {
+    "Name": "secleadmasterservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "secleadspecialservicer",
+    "Type": "string"
+  },
+  {
+    "Name": "seccontrollingnoteholder",
+    "Type": "string"
+  },
+  {
+    "Name": "covenantdebtyield",
+    "Type": "string"
+  },
+  {
+    "Name": "secappraiser",
+    "Type": "string"
+  },
+  {
+    "Name": "engineeringrptdt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "environmentalphase1rptdt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "environmentalphase2rptdt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "seismicpmlpct",
+    "Type": "double"
+  },
+  {
+    "Name": "seismicrptdt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "terrorisminsuranceflag",
+    "Type": "string"
+  },
+  {
+    "Name": "earthquakeinsuranceflag",
+    "Type": "string"
+  },
+  {
+    "Name": "environmentalphase2flag",
+    "Type": "string"
+  },
+  {
+    "Name": "environmentalinsuranceflag",
+    "Type": "string"
+  },
+  {
+    "Name": "speflag",
+    "Type": "string"
+  },
+  {
+    "Name": "greenprogram",
+    "Type": "string"
+  },
+  {
+    "Name": "greencertifications",
+    "Type": "string"
+  },
+  {
+    "Name": "lowincomeunits",
+    "Type": "string"
+  },
+  {
+    "Name": "verylowincomeunits",
+    "Type": "string"
+  },
+  {
+    "Name": "rentalsubsidyindicatorflag",
+    "Type": "string"
+  },
+  {
+    "Name": "rentalsubsidytype",
+    "Type": "string"
+  },
+  {
+    "Name": "secterminationoptionflag1",
+    "Type": "string"
+  },
+  {
+    "Name": "secterminationoptionflag2",
+    "Type": "string"
+  },
+  {
+    "Name": "secterminationoptionflag3",
+    "Type": "string"
+  },
+  {
+    "Name": "secterminationoptionflag4",
+    "Type": "string"
+  },
+  {
+    "Name": "secterminationoptionflag5",
+    "Type": "string"
+  },
+  {
+    "Name": "secearlyleaseterminationdt1",
+    "Type": "string"
+  },
+  {
+    "Name": "secearlyleaseterminationdt2",
+    "Type": "string"
+  },
+  {
+    "Name": "secearlyleaseterminationdt3",
+    "Type": "string"
+  },
+  {
+    "Name": "secearlyleaseterminationdt4",
+    "Type": "string"
+  },
+  {
+    "Name": "secearlyleaseterminationdt5",
+    "Type": "string"
+  },
+  {
+    "Name": "balloonltvtotalmortgage",
+    "Type": "string"
+  },
+  {
+    "Name": "sectotalmortgagedscrnoi",
+    "Type": "string"
+  },
+  {
+    "Name": "sectotalmortgagedscrncf",
+    "Type": "string"
+  },
+  {
+    "Name": "sectotalmortgagedebtyieldnoi",
+    "Type": "string"
+  },
+  {
+    "Name": "sectotalmortgagedebtyieldncf",
+    "Type": "string"
+  },
+  {
+    "Name": "sectotalmortgageltv",
+    "Type": "string"
+  },
+  {
+    "Name": "sectotalmortgagedebtserviceio",
+    "Type": "string"
+  },
+  {
+    "Name": "sectotalmortgagedebtservice",
+    "Type": "string"
+  },
+  {
+    "Name": "secjuniorbalance",
+    "Type": "double"
+  },
+  {
+    "Name": "secmezzbalance",
+    "Type": "string"
+  },
+  {
+    "Name": "secappraisedvalueasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secappraisalasisdt",
+    "Type": "bigint"
+  },
+  {
+    "Name": "secltvasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secoccupancyrateasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secrevenuesasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secexpensesasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secnoiasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secreplacementreserveasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secncfasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secdscrnoiasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secdscrncfasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secdebtyieldnoiasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secdebtyieldncfasis",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrdscrnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrdscrncf",
+    "Type": "double"
+  },
+  {
+    "Name": "secmrdebtyieldncf",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrdscrnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrdscrncf",
+    "Type": "double"
+  },
+  {
+    "Name": "sec2ndmrdebtyieldncf",
+    "Type": "string"
+  },
+  {
+    "Name": "sec3rdmrdscrnoi",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmrdscrncf",
+    "Type": "double"
+  },
+  {
+    "Name": "sec3rdmrdebtyieldncf",
+    "Type": "string"
+  },
+  {
+    "Name": "filedate",
+    "Type": "string"
+  },
+  {
+    "Name": "month",
+    "Type": "int"
+  },
+  {
+    "Name": "year",
+    "Type": "string",
+    "PartitionKey": "Partition (0)"
+  }
+]
+
+def validate_field_names(expected_dict, actual):
+    expected_names = set(expected_dict.keys())
+    actual_names = {field["Name"] for field in actual}
+
+    missing = expected_names - actual_names
+    extra = actual_names - expected_names
+
+    return missing, extra
+
+
+missing_fields, extra_fields = validate_field_names(expected_comments, actual_schema)
+
+if not missing_fields and not extra_fields:
+    print("All expected field names are present.")
+else:
+    if missing_fields:
+        print("Extra fields in Excel:")
+        for f in sorted(missing_fields):
+            print(f" - {f}")
+
+    if extra_fields:
+        print("Fields missing from Excel:")
+        for f in sorted(extra_fields):
+            print(f" - {f}")
