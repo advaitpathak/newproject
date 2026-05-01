@@ -1,0 +1,59 @@
+service: treppstream-gatekeeper
+
+custom:
+  ## custom mappings for environments
+  LoggerLevelName:
+    development: DEBUG
+    production: INFO
+#  DeploymentBucket:
+#    development: 'treppstream-gatekeeper-development-serverlessdeploymentbucket'
+#    production: 'treppstream-gatekeeper-production-serverlessdeploymentbucket'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  deploymentBucket: ${self:resources.Resources.myBucket.Properties.BucketName}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - kinesis:PutRecord
+            - kinesis:PutRecords
+            - kinesis:DescribeStream
+          Resource: "*"
+        - Effect: Allow
+          Action:
+            - glue:GetRegistry
+            - glue:GetSchemaVersion
+            - glue:GetSchema
+          Resource: "*"
+        - Effect: Allow
+          Action:
+            - s3:CreateBucket
+          Resource: arn:aws:s3:::my-bucket
+
+functions:
+  send-records:
+    handler: src.com.trepp.gatekeeper.send_records.main
+    timeout: 60
+    events:
+      - http:
+          path: v1.0/kinesis-test/send_test_records
+          method: post
+    environment:
+      LOGGER_LEVEL_NAME: ${self:custom.LoggerLevelName.${opt:stage}}
+      ENVIRONMENT: ${opt:stage}
+
+resources:
+  Resources:
+    myBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: 'my-bucket'
+
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
